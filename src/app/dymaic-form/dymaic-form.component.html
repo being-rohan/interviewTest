@@ -1,0 +1,74 @@
+
+
+      <div class="col-md-8 offset-md-2">
+        <!-- Main Card -->
+        <mat-card class="main-card">
+          <mat-card-header>
+            <mat-card-title>{{ 'EMP_INFO' | translate }}</mat-card-title>
+            <mat-card-subtitle>{{ 'EMP_INFO2' | translate }}</mat-card-subtitle>
+          </mat-card-header>
+  
+          <mat-card-content>
+            <!-- Theme Class -->
+            <div [ngClass]="currentTheme">
+              <!-- Tabs -->
+              <mat-tab-group>
+                <!-- Employee Info Tab -->
+                <mat-tab label="{{ 'EMP_INFO' | translate }}">
+                  <form  [formGroup]="employerForm" >
+                    <!-- Company Name Field -->
+                    <mat-form-field  class="mt-1" appearance="outline">
+                      <mat-label>{{ 'COMPANY_NAME' | translate }}</mat-label>
+                      <input 
+                        matInput
+                        formControlName="companyName"
+                        placeholder="{{ 'ENTER_COMPANY_NAME' | translate }}"
+                      />
+                      <mat-error class="mt-1" *ngIf="employerForm.get('companyName')?.hasError('required')">
+                        {{ 'REQUIRED_FIELD' | translate }}
+                      </mat-error>
+                      <mat-error class="mt-2" *ngIf="employerForm.get('companyName')?.hasError('minlength')">
+                        {{ 'MIN_LENGTH_ERROR' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+  
+                    <!-- Sector Field -->
+                    <mat-form-field class="mb-3" appearance="outline">
+                      <mat-label>{{ 'SECTOR' | translate }}</mat-label>
+                      <input
+                        matInput
+                        formControlName="sector"
+                        placeholder="{{ 'ENTER_SECTOR' | translate }}"
+                      />
+                      <mat-error class="mt-1" *ngIf="employerForm.get('sector')?.hasError('required')">
+                        {{ 'REQUIRED_FIELD' | translate }}
+                      </mat-error>
+                      <mat-error  class="mt-2" *ngIf="employerForm.get('sector')?.hasError('minlength')">
+                        {{ 'MIN_LENGTH_ERROR' | translate }}
+                      </mat-error>
+                    </mat-form-field>
+  
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+
+                      <button mat-raised-button color="primary" (click)="onsubmit()" [disabled]="!employerForm.valid">
+                        {{ 'SUBMIT' | translate }}
+                      </button>
+                      <button mat-button type="reset" (click)="resetForm()">
+                        {{ 'RESET' | translate }}
+                      </button>
+                    </div>
+                  </form>
+                </mat-tab>
+  
+                <!-- About Us Tab -->
+                <mat-tab label="{{ 'ABOUT_US' | translate }}">
+                  <p>{{ 'ABOUT_US_CONTENT' | translate }}</p>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+ 
+    

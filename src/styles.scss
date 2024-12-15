@@ -1,1 +1,174 @@
-/* You can add global styles to this file, and also import other style files */
+/* Define Light and Dark Themes */
+:root {
+  --primary-color: #3f51b5;
+  --secondary-color: #ff4081;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --error-color: #f44336;
+
+  --button-bg-color: #3f51b5;
+  --button-text-color: #ffffff;
+
+  --form-border-color: #d3d3d3;
+  --form-focus-color: #3f51b5;
+}
+
+[data-theme='dark'] {
+  --primary-color: #90caf9;
+  --secondary-color: #f48fb1;
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --error-color: #ef5350;
+
+  --button-bg-color: #90caf9;
+  --button-text-color: #121212;
+
+  --form-border-color: #fff;
+  --form-focus-color: #90caf9;
+
+  
+}
+
+/* Reset Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* General Styling for Containers */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &.primary {
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+  }
+
+  &.secondary {
+    background-color: var(--secondary-color);
+    color: var(--button-text-color);
+  }
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+/* Forms */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px;
+
+  .mat-form-field-outline {
+    border-color: var(--form-border-color);
+  }
+
+  &:focus-within .mat-form-field-outline {
+    border-color: var(--form-focus-color);
+    border-width: 2px;
+  }
+}
+
+input,
+textarea {
+  border: 1px solid var(--form-border-color);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 14px;
+  color: var(--text-color);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: var(--form-focus-color);
+  }
+}
+
+/* Error Messages */
+.mat-error {
+  color: var(--error-color);
+  font-size: 12px;
+  margin-top: -8px;
+}
+
+/* Tabs */
+mat-tab-group {
+  margin-top: 20px;
+
+  .mat-tab-label {
+    font-weight: bold;
+    color: var(--text-color);
+
+    &.mat-tab-label-active {
+      color: var(--primary-color);
+    }
+  }
+
+  .mat-ink-bar {
+    background-color: var(--primary-color);
+  }
+}
+
+/* Cards */
+mat-card {
+  margin: 10px;
+  padding: 16px;
+  background-color: var(--background-color);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  h2 {
+    font-size: 18px;
+    color: var(--primary-color);
+  }
+
+  p {
+    font-size: 14px;
+    color: var(--text-color);
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--button-text-color);
+  margin-top: 20px;
+  border-top: 4px solid var(--secondary-color);
+}
+
+

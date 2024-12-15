@@ -1,0 +1,15 @@
+{
+  "EMP_INFO": "Employer Form",
+  "EMP_INFO2": "FormSubmision",
+
+  "ABOUT_US": "About Us",
+  "COMPANY_NAME": "What's your company name?",
+  "SECTOR": "Sector",
+  "ENTER_COMPANY_NAME": "Enter your company name",
+  "ENTER_SECTOR": "Enter your sector",
+  "REQUIRED_FIELD": "This field is required",
+  "MIN_LENGTH_ERROR": "Minimum 3 characters required",
+  "MAX_LENGTH_ERROR": "Maximum 50 characters allowed",
+  "SUBMIT": "Submit",
+  "RESET": "Reset"
+}

@@ -1,0 +1,21 @@
+<div *ngIf="companies.length > 0" class="company-list">
+
+  <div class="mat-card-container">
+    <mat-card *ngFor="let company of companies" class="mat-card">
+      <mat-card-header>
+        <mat-card-title>{{ company.name }}</mat-card-title>
+        <mat-card-subtitle>{{ company.sector }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p class="text-primary">Sector: {{ company.sector }}</p>
+      </mat-card-content>
+      <button mat-raised-button color="primary" (click)="onedit(companies)" >
+       edit
+      </button>
+    </mat-card>
+  </div>
+</div>
+
+<div *ngIf="companies.length === 0" class="no-companies">
+  <p>No companies found.</p>
+</div>
